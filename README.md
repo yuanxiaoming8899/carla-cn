@@ -1,157 +1,148 @@
-CARLA Simulator
-===============
-
-[![Build Status](https://travis-ci.org/carla-simulator/carla.svg?branch=master)](https://travis-ci.org/carla-simulator/carla)
-[![Documentation](https://readthedocs.org/projects/carla/badge/?version=latest)](http://carla.readthedocs.io)
-
-[![carla.org](Docs/img/btn/web.png)](http://carla.org)
-[![download](Docs/img/btn/download.png)](https://github.com/carla-simulator/carla/blob/master/Docs/download.md)
-[![documentation](Docs/img/btn/docs.png)](http://carla.readthedocs.io)
-[![forum](Docs/img/btn/forum.png)](https://github.com/carla-simulator/carla/discussions)
-[![discord](Docs/img/btn/chat.png)](https://discord.gg/8kqACuC)
-
-CARLA is an open-source simulator for autonomous driving research. CARLA has been developed from the ground up to support development, training, and
-validation of autonomous driving systems. In addition to open-source code and protocols, CARLA provides open digital assets (urban layouts, buildings,
-vehicles) that were created for this purpose and can be used freely. The simulation platform supports flexible specification of sensor suites and
-environmental conditions.
-
-[![CARLA Video](Docs/img/video_thumbnail_0910.jpg)](https://www.youtube.com/watch?v=7jej46ALVRE)
-
-If you want to benchmark your model in the same conditions as in our CoRL’17
-paper, check out
-[Benchmarking](https://github.com/carla-simulator/driving-benchmarks).
-
-Linux:
-* [**Get CARLA overnight build**](http://carla-releases.s3.amazonaws.com/Linux/Dev/CARLA_Latest.tar.gz)
-* [**Get AdditionalMaps overnight build**](http://carla-releases.s3.amazonaws.com/Linux/Dev/AdditionalMaps_Latest.tar.gz)
-
-Windows:
-* [**Get CARLA overnight build**](http://carla-releases.s3.amazonaws.com/Windows/Dev/CARLA_Latest.zip)
-* [**Get AdditionalMaps overnight build**](http://carla-releases.s3.amazonaws.com/Windows/Dev/AdditionalMaps_Latest.zip)
-
-### Recommended system
-
-* Intel i7 gen 9th - 11th / Intel i9 gen 9th - 11th / AMD ryzen 7 / AMD ryzen 9
-* +16 GB RAM memory 
-* NVIDIA RTX 2070 / NVIDIA RTX 2080 / NVIDIA RTX 3070, NVIDIA RTX 3080
-* Ubuntu 18.04
-
-## CARLA Ecosystem
-Repositories associated to the CARLA simulation platform:
-
-* [**CARLA Autonomous Driving leaderboard**](https://leaderboard.carla.org/): Automatic platform to validate Autonomous Driving stacks
-* [**Scenario_Runner**](https://github.com/carla-simulator/scenario_runner): Engine to execute traffic scenarios in CARLA 0.9.X
-* [**ROS-bridge**](https://github.com/carla-simulator/ros-bridge): Interface to connect CARLA 0.9.X to ROS
-* [**Driving-benchmarks**](https://github.com/carla-simulator/driving-benchmarks): Benchmark tools for Autonomous Driving tasks
-* [**Conditional Imitation-Learning**](https://github.com/felipecode/coiltraine): Training and testing Conditional Imitation Learning models in CARLA
-* [**AutoWare AV stack**](https://github.com/carla-simulator/carla-autoware): Bridge to connect AutoWare AV stack to CARLA
-* [**Reinforcement-Learning**](https://github.com/carla-simulator/reinforcement-learning): Code for running Conditional Reinforcement Learning models in CARLA
-* [**Map Editor**](https://github.com/carla-simulator/carla-map-editor): Standalone GUI application to enhance RoadRunner maps with traffic lights and traffic signs information
-
-**Like what you see? Star us on GitHub to support the project!**
-
-Paper
------
-
-If you use CARLA, please cite our CoRL’17 paper.
-
-_CARLA: An Open Urban Driving Simulator_<br>Alexey Dosovitskiy, German Ros,
-Felipe Codevilla, Antonio Lopez, Vladlen Koltun; PMLR 78:1-16
-[[PDF](http://proceedings.mlr.press/v78/dosovitskiy17a/dosovitskiy17a.pdf)]
-[[talk](https://www.youtube.com/watch?v=xfyK03MEZ9Q&feature=youtu.be&t=2h44m30s)]
-
-
-```
-@inproceedings{Dosovitskiy17,
+<div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">卡拉模拟器</font></font></h1><a id="user-content-carla-simulator" class="anchor-element" aria-label="永久链接：CARLA 模拟器" href="#carla-simulator"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><a href="https://travis-ci.org/carla-simulator/carla" rel="nofollow"><img src="https://camo.githubusercontent.com/c27e39d83021f97dd6794e94f0d22876aeabcf81f5e0bcfa579dcfdb2bdcc415/68747470733a2f2f7472617669732d63692e6f72672f6361726c612d73696d756c61746f722f6361726c612e7376673f6272616e63683d6d6173746572" alt="构建状态" data-canonical-src="https://travis-ci.org/carla-simulator/carla.svg?branch=master" style="max-width: 100%;"></a>
+<a href="http://carla.readthedocs.io" rel="nofollow"><img src="https://camo.githubusercontent.com/28f6fa2ec4916eb726e17cdd4879c439a751c18b4357104ec545f7ffeebab63f/68747470733a2f2f72656164746865646f63732e6f72672f70726f6a656374732f6361726c612f62616467652f3f76657273696f6e3d6c6174657374" alt="文档" data-canonical-src="https://readthedocs.org/projects/carla/badge/?version=latest" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="http://carla.org" rel="nofollow"><img src="/carla-simulator/carla/raw/master/Docs/img/btn/web.png" alt="卡拉.org" style="max-width: 100%;"></a>
+<a href="https://github.com/carla-simulator/carla/blob/master/Docs/download.md"><img src="/carla-simulator/carla/raw/master/Docs/img/btn/download.png" alt="下载" style="max-width: 100%;"></a>
+<a href="http://carla.readthedocs.io" rel="nofollow"><img src="/carla-simulator/carla/raw/master/Docs/img/btn/docs.png" alt="文档" style="max-width: 100%;"></a>
+<a href="https://github.com/carla-simulator/carla/discussions"><img src="/carla-simulator/carla/raw/master/Docs/img/btn/forum.png" alt="论坛" style="max-width: 100%;"></a>
+<a href="https://discord.gg/8kqACuC" rel="nofollow"><img src="/carla-simulator/carla/raw/master/Docs/img/btn/chat.png" alt="不和谐" style="max-width: 100%;"></a></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CARLA 是一个用于自动驾驶研究的开源模拟器。</font><font style="vertical-align: inherit;">CARLA 的开发是为了支持自动驾驶系统的开发、培训和验证。</font><font style="vertical-align: inherit;">除了开源代码和协议之外，CARLA 还提供为此目的创建的开放数字资产（城市布局、建筑物、车辆），并且可以自由使用。</font><font style="vertical-align: inherit;">该仿真平台支持灵活的传感器套件和环境条件规范。</font></font></p>
+<p dir="auto"><a href="https://www.youtube.com/watch?v=7jej46ALVRE" rel="nofollow"><img src="/carla-simulator/carla/raw/master/Docs/img/video_thumbnail_0910.jpg" alt="卡拉视频" style="max-width: 100%;"></a></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您想在与 CoRL'17 论文相同的条件下对模型进行基准测试，请查看
+</font></font><a href="https://github.com/carla-simulator/driving-benchmarks"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">基准测试</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Linux：</font></font></p>
+<ul dir="auto">
+<li><a href="http://carla-releases.s3.amazonaws.com/Linux/Dev/CARLA_Latest.tar.gz" rel="nofollow"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">获得 CARLA 过夜构建</font></font></strong></a></li>
+<li><a href="http://carla-releases.s3.amazonaws.com/Linux/Dev/AdditionalMaps_Latest.tar.gz" rel="nofollow"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">获得额外的地图过夜构建</font></font></strong></a></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">视窗：</font></font></p>
+<ul dir="auto">
+<li><a href="http://carla-releases.s3.amazonaws.com/Windows/Dev/CARLA_Latest.zip" rel="nofollow"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">获得 CARLA 过夜构建</font></font></strong></a></li>
+<li><a href="http://carla-releases.s3.amazonaws.com/Windows/Dev/AdditionalMaps_Latest.zip" rel="nofollow"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">获得额外的地图过夜构建</font></font></strong></a></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">推荐系统</font></font></h3><a id="user-content-recommended-system" class="anchor-element" aria-label="永久链接：推荐系统" href="#recommended-system"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">英特尔 i7 第 9 - 11 代 / Intel i9 第 9 - 11 代 / AMD 锐龙 7 / AMD 锐龙 9</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">+16 GB RAM 内存</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">NVIDIA RTX 2070 / NVIDIA RTX 2080 / NVIDIA RTX 3070、NVIDIA RTX 3080</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">乌班图18.04</font></font></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CARLA生态系统</font></font></h2><a id="user-content-carla-ecosystem" class="anchor-element" aria-label="永久链接：CARLA 生态系统" href="#carla-ecosystem"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">与 CARLA 模拟平台关联的存储库：</font></font></p>
+<ul dir="auto">
+<li><a href="https://leaderboard.carla.org/" rel="nofollow"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CARLA 自动驾驶排行榜</font></font></strong></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：验证自动驾驶堆栈的自动平台</font></font></li>
+<li><a href="https://github.com/carla-simulator/scenario_runner"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Scenario_Runner</font></font></strong></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：在 CARLA 0.9.X 中执行交通场景的引擎</font></font></li>
+<li><a href="https://github.com/carla-simulator/ros-bridge"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ROS-bridge</font></font></strong></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：连接 CARLA 0.9.X 到 ROS 的接口</font></font></li>
+<li><a href="https://github.com/carla-simulator/driving-benchmarks"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">驾驶基准</font></font></strong></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：自动驾驶任务的基准工具</font></font></li>
+<li><a href="https://github.com/felipecode/coiltraine"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">有条件模仿学习</font></font></strong></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：在 CARLA 中训练和测试有条件模仿学习模型</font></font></li>
+<li><a href="https://github.com/carla-simulator/carla-autoware"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">AutoWare AV 堆栈</font></font></strong></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：将 AutoWare AV 堆栈连接到 CARLA 的桥梁</font></font></li>
+<li><a href="https://github.com/carla-simulator/reinforcement-learning"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">强化学习</font></font></strong></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：在 CARLA 中运行条件强化学习模型的代码</font></font></li>
+<li><a href="https://github.com/carla-simulator/carla-map-editor"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">地图编辑器</font></font></strong></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：独立的 GUI 应用程序，可通过交通灯和交通标志信息增强 RoadRunner 地图</font></font></li>
+</ul>
+<p dir="auto"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">喜欢你所看到的吗？</font><font style="vertical-align: inherit;">在 GitHub 上给我们加星标以支持该项目！</font></font></strong></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">纸</font></font></h2><a id="user-content-paper" class="anchor-element" aria-label="永久链接：纸" href="#paper"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您使用 CARLA，请引用我们的 CoRL'17 论文。</font></font></p>
+<p dir="auto"><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CARLA：开放式城市驾驶模拟器</font></font></em><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Alexey Dosovitskiy、German Ros、Felipe Codevilla、Antonio Lopez、Vladlen Koltun；</font><font style="vertical-align: inherit;">PMLR 78:1-16 [ </font></font><a href="http://proceedings.mlr.press/v78/dosovitskiy17a/dosovitskiy17a.pdf" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PDF</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> ] [</font></font><a href="https://www.youtube.com/watch?v=xfyK03MEZ9Q&amp;feature=youtu.be&amp;t=2h44m30s" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">谈话</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">]</font></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>@inproceedings{Dosovitskiy17,
   title = {{CARLA}: {An} Open Urban Driving Simulator},
   author = {Alexey Dosovitskiy and German Ros and Felipe Codevilla and Antonio Lopez and Vladlen Koltun},
   booktitle = {Proceedings of the 1st Annual Conference on Robot Learning},
   pages = {1--16},
   year = {2017}
 }
-```
-
-Building CARLA
---------------
-
-Use `git clone` or download the project from this page. Note that the master branch contains the most recent release of CARLA with the latest fixes and features.
-
-Then follow the instruction at [How to build on Linux][buildlinuxlink] or [How to build on Windows][buildwindowslink].  
-The Linux build needs for an UE patch to solve some visualization issues regarding Vulkan. Those already working with a Linux build should install the patch and make the UE build again using the following commands.  
-```sh
-# Download and install the UE patch  
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="@inproceedings{Dosovitskiy17,
+  title = {{CARLA}: {An} Open Urban Driving Simulator},
+  author = {Alexey Dosovitskiy and German Ros and Felipe Codevilla and Antonio Lopez and Vladlen Koltun},
+  booktitle = {Proceedings of the 1st Annual Conference on Robot Learning},
+  pages = {1--16},
+  year = {2017}
+}" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">建设卡拉</font></font></h2><a id="user-content-building-carla" class="anchor-element" aria-label="永久链接：构建 CARLA" href="#building-carla"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">从此页面使用</font></font><code>git clone</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">或下载项目。</font><font style="vertical-align: inherit;">请注意，主分支包含最新版本的 CARLA 以及最新的修复和功能。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="https://carla.readthedocs.io/en/latest/build_linux/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">然后按照如何在 Linux 上构建</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">或</font></font><a href="https://carla.readthedocs.io/en/latest/build_windows/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如何在 Windows 上构建中</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">的说明进行操作</font><font style="vertical-align: inherit;">。</font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+Linux 版本需要 UE 补丁来解决有关 Vulkan 的一些可视化问题。</font><font style="vertical-align: inherit;">那些已经使用 Linux 构建的用户应该安装补丁并使用以下命令再次构建 UE。</font></font></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-c"><span class="pl-c">#</span> Download and install the UE patch  </span>
+<span class="pl-c1">cd</span> <span class="pl-k">~</span>/UnrealEngine_4.24
+wget https://carla-releases.s3.eu-west-3.amazonaws.com/Linux/UE_Patch/430667-13636743-patch.txt <span class="pl-k">~</span>/430667-13636743-patch.txt
+patch --strip=4 <span class="pl-k">&lt;</span> <span class="pl-k">~</span>/430667-13636743-patch.txt
+<span class="pl-c"><span class="pl-c">#</span> Build UE</span>
+./Setup.sh <span class="pl-k">&amp;&amp;</span> ./GenerateProjectFiles.sh <span class="pl-k">&amp;&amp;</span> make</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="# Download and install the UE patch  
 cd ~/UnrealEngine_4.24
 wget https://carla-releases.s3.eu-west-3.amazonaws.com/Linux/UE_Patch/430667-13636743-patch.txt ~/430667-13636743-patch.txt
 patch --strip=4 < ~/430667-13636743-patch.txt
 # Build UE
-./Setup.sh && ./GenerateProjectFiles.sh && make
-```
-
-Unfortunately we don't have official instructions to build on Mac yet, please check the progress at [issue #150][issue150].
-
-[buildlinuxlink]: https://carla.readthedocs.io/en/latest/build_linux/
-[buildwindowslink]: https://carla.readthedocs.io/en/latest/build_windows/
-[issue150]: https://github.com/carla-simulator/carla/issues/150
-
-Contributing
-------------
-
-Please take a look at our [Contribution guidelines][contriblink].
-
-[contriblink]: https://carla.readthedocs.io/en/latest/cont_contribution_guidelines/
-
-F.A.Q.
-------
-
-If you run into problems, check our
-[FAQ](https://carla.readthedocs.io/en/latest/build_faq/).
-
-CARLA Talks
-------
-The team creates some additional content for users, besides the docs. This is a great way to cover different subjects such as detailed explanations for a specific module, latest improvements in a feature, future work and much more.  
-
-__CARLA Talks 2020 (May):__  
-
-*   __General__  
-	*   Art improvements: environment and rendering — [video](https://youtu.be/ZZaHevsz8W8) | [slides](https://drive.google.com/file/d/1l9Ztaq0Q8fNN5YPU4-5vL13eZUwsQl5P/view?usp=sharing)  
-	*   Core implementations: synchrony, snapshots and landmarks — [video](https://youtu.be/nyyTLmphqY4) | [slides](https://drive.google.com/file/d/1yaOwf1419qWZqE1gTSrrknsWOhawEWh_/view?usp=sharing)
-	*   Data ingestion — [video](https://youtu.be/mHiUUZ4xC9o) | [slides](https://drive.google.com/file/d/10uNBAMreKajYimIhwCqSYXjhfVs2bX31/view?usp=sharing)  
-	*   Pedestrians and their implementation — [video](https://youtu.be/Uoz2ihDwaWA) | [slides](https://drive.google.com/file/d/1Tsosin7BLP1k558shtbzUdo2ZXVKy5CB/view?usp=sharing)  
-	*   Sensors in CARLA — [video](https://youtu.be/T8qCSet8WK0) | [slides](https://drive.google.com/file/d/1UO8ZAIOp-1xaBzcFMfn_IoipycVkUo4q/view?usp=sharing)  
-*   __Modules__  
-	*   Improvements in the Traffic Manager — [video](https://youtu.be/n9cufaJ17eA) | [slides](https://drive.google.com/file/d/1R9uNZ6pYHSZoEBxs2vYK7swiriKbbuxo/view?usp=sharing)  
-	*   Integration of autoware and ROS — [video](https://youtu.be/ChIgcC2scwU) | [slides](https://drive.google.com/file/d/1uO6nBaFirrllb08OeqGAMVLApQ6EbgAt/view?usp=sharing)  
-	*   Introducing ScenarioRunner — [video](https://youtu.be/dcnnNJowqzM) | [slides](https://drive.google.com/file/d/1zgoH_kLOfIw117FJGm2IVZZAIRw9U2Q0/view?usp=sharing)  
-	*   OpenSCENARIO support — [slides](https://drive.google.com/file/d/1g6ATxZRTWEdstiZwfBN1_T_x_WwZs0zE/view?usp=sharing)  
-*   __Features__  
-	*   Co-Simulations with SUMO and PTV-Vissim — [video](https://youtu.be/PuFSbj1PU94) | [slides](https://drive.google.com/file/d/10DgMNUBqKqWBrdiwBiAIT4DdR9ObCquI/view?usp=sharing)  
-	*   Integration of RSS-lib — [slides](https://drive.google.com/file/d/1whREmrCv67fOMipgCk6kkiW4VPODig0A/view?usp=sharing)  
-	*   The External Sensor Interface (ESI) — [video](https://youtu.be/5hXHPV9FIeY) | [slides](https://drive.google.com/file/d/1VWFaEoS12siW6NtQDUkm44BVO7tveRbJ/view?usp=sharing)  
-	*   The OpenDRIVE Standalone Mode — [video](https://youtu.be/U25GhofVV1Q) | [slides](https://drive.google.com/file/d/1D5VsgfX7dmgPWn7UtDDid3-OdS1HI4pY/view?usp=sharing)  
-
-Licenses
--------
-
-#### CARLA licenses
-
-CARLA specific code is distributed under MIT License.
-
-CARLA specific assets are distributed under CC-BY License.
-
-#### CARLA Dependency and Integration licenses
-
-The ad-rss-lib library compiled and linked by the [RSS Integration build variant](Docs/adv_rss.md) introduces [LGPL-2.1-only License](https://opensource.org/licenses/LGPL-2.1).
-
-Unreal Engine 4 follows its [own license terms](https://www.unrealengine.com/en-US/faq).
-
-CARLA uses three dependencies as part of the SUMO integration:
-- [PROJ](https://proj.org/), a generic coordinate transformation software which uses the [X/MIT open source license](https://proj.org/about.html#license).
-- [SQLite](https://www.sqlite.org), part of the PROJ dependencies, which is [in the public domain](https://www.sqlite.org/purchase/license).
-- [Xerces-C](https://xerces.apache.org/xerces-c/), a validating XML parser, which is made available under the [Apache Software License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
-
-CARLA uses one dependency as part of the Chrono integration:
-- [Eigen](https://eigen.tuxfamily.org/index.php?title=Main_Page), a C++ template library for linear algebra which uses the [MPL2 license](https://www.mozilla.org/en-US/MPL/2.0/).
-
-CARLA uses the Autodesk FBX SDK for converting FBX to OBJ in the import process of maps. This step is optional, and the SDK is located [here](https://www.autodesk.com/developer-network/platform-technologies/fbx-sdk-2020-0)
-
-This software contains Autodesk® FBX® code developed by Autodesk, Inc. Copyright 2020 Autodesk, Inc. All rights, reserved. Such code is provided "as is" and Autodesk, Inc. disclaims any and all warranties, whether express or implied, including without limitation the implied warranties of merchantability, fitness for a particular purpose or non-infringement of third party rights. In no event shall Autodesk, Inc. be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of such code."
+./Setup.sh &amp;&amp; ./GenerateProjectFiles.sh &amp;&amp; make" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">不幸的是，我们还没有在 Mac 上构建的官方说明，请检查</font></font><a href="https://github.com/carla-simulator/carla/issues/150" data-hovercard-type="issue" data-hovercard-url="/carla-simulator/carla/issues/150/hovercard"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">问题 #150</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">的进度。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献</font></font></h2><a id="user-content-contributing" class="anchor-element" aria-label="永久链接：贡献" href="#contributing"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请查看我们的</font></font><a href="https://carla.readthedocs.io/en/latest/cont_contribution_guidelines/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献指南</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">常问问题</font></font></h2><a id="user-content-faq" class="anchor-element" aria-label="永久链接：常见问题解答" href="#faq"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您遇到问题，请查看我们的
+</font></font><a href="https://carla.readthedocs.io/en/latest/build_faq/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">常见问题解答</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">卡拉会谈</font></font></h2><a id="user-content-carla-talks" class="anchor-element" aria-label="永久链接：卡拉会谈" href="#carla-talks"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">除了文档之外，团队还为用户创建了一些附加内容。</font><font style="vertical-align: inherit;">这是涵盖不同主题的好方法，例如特定模块的详细说明、功能的最新改进、未来的工作等等。</font></font></p>
+<p dir="auto"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2020 年 CARLA 会谈（5 月）：</font></font></strong></p>
+<ul dir="auto">
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">一般的</font></font></strong>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">艺术改进：环境和渲染 —</font></font><a href="https://youtu.be/ZZaHevsz8W8" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">视频</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">| </font></font><a href="https://drive.google.com/file/d/1l9Ztaq0Q8fNN5YPU4-5vL13eZUwsQl5P/view?usp=sharing" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">幻灯片</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">核心实现：同步、快照和地标 —</font></font><a href="https://youtu.be/nyyTLmphqY4" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">视频</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">| </font></font><a href="https://drive.google.com/file/d/1yaOwf1419qWZqE1gTSrrknsWOhawEWh_/view?usp=sharing" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">幻灯片</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">数据摄取 —</font></font><a href="https://youtu.be/mHiUUZ4xC9o" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">视频</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">| </font></font><a href="https://drive.google.com/file/d/10uNBAMreKajYimIhwCqSYXjhfVs2bX31/view?usp=sharing" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">幻灯片</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">行人及其实施 —</font></font><a href="https://youtu.be/Uoz2ihDwaWA" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">视频</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">| </font></font><a href="https://drive.google.com/file/d/1Tsosin7BLP1k558shtbzUdo2ZXVKy5CB/view?usp=sharing" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">幻灯片</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CARLA 中的传感器 —</font></font><a href="https://youtu.be/T8qCSet8WK0" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">视频</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">| </font></font><a href="https://drive.google.com/file/d/1UO8ZAIOp-1xaBzcFMfn_IoipycVkUo4q/view?usp=sharing" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">幻灯片</font></font></a></li>
+</ul>
+</li>
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">模块</font></font></strong>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">流量管理器的改进 —</font></font><a href="https://youtu.be/n9cufaJ17eA" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">视频</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">| </font></font><a href="https://drive.google.com/file/d/1R9uNZ6pYHSZoEBxs2vYK7swiriKbbuxo/view?usp=sharing" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">幻灯片</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">autoware 和 ROS 的集成 —</font></font><a href="https://youtu.be/ChIgcC2scwU" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">视频</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">| </font></font><a href="https://drive.google.com/file/d/1uO6nBaFirrllb08OeqGAMVLApQ6EbgAt/view?usp=sharing" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">幻灯片</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">介绍 ScenarioRunner —</font></font><a href="https://youtu.be/dcnnNJowqzM" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">视频</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">| </font></font><a href="https://drive.google.com/file/d/1zgoH_kLOfIw117FJGm2IVZZAIRw9U2Q0/view?usp=sharing" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">幻灯片</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">OpenSCENARIO 支持 —</font></font><a href="https://drive.google.com/file/d/1g6ATxZRTWEdstiZwfBN1_T_x_WwZs0zE/view?usp=sharing" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">幻灯片</font></font></a></li>
+</ul>
+</li>
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">特征</font></font></strong>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">与 SUMO 和 PTV-Vissim 的联合仿真 —</font></font><a href="https://youtu.be/PuFSbj1PU94" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">视频</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">| </font></font><a href="https://drive.google.com/file/d/10DgMNUBqKqWBrdiwBiAIT4DdR9ObCquI/view?usp=sharing" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">幻灯片</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RSS-lib 的集成 —</font></font><a href="https://drive.google.com/file/d/1whREmrCv67fOMipgCk6kkiW4VPODig0A/view?usp=sharing" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">幻灯片</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">外部传感器接口 (ESI) —</font></font><a href="https://youtu.be/5hXHPV9FIeY" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">视频</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">| </font></font><a href="https://drive.google.com/file/d/1VWFaEoS12siW6NtQDUkm44BVO7tveRbJ/view?usp=sharing" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">幻灯片</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">OpenDRIVE 独立模式 —</font></font><a href="https://youtu.be/U25GhofVV1Q" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">视频</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">| </font></font><a href="https://drive.google.com/file/d/1D5VsgfX7dmgPWn7UtDDid3-OdS1HI4pY/view?usp=sharing" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">幻灯片</font></font></a></li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">许可证</font></font></h2><a id="user-content-licenses" class="anchor-element" aria-label="永久链接：许可证" href="#licenses"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">卡拉许可证</font></font></h4><a id="user-content-carla-licenses" class="anchor-element" aria-label="永久链接：CARLA 许可证" href="#carla-licenses"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CARLA 特定代码根据 MIT 许可证分发。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CARLA 特定资产根据 CC-BY 许可证进行分发。</font></font></p>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CARLA 依赖项和集成许可证</font></font></h4><a id="user-content-carla-dependency-and-integration-licenses" class="anchor-element" aria-label="永久链接：CARLA 依赖项和集成许可证" href="#carla-dependency-and-integration-licenses"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="/carla-simulator/carla/blob/master/Docs/adv_rss.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">由RSS Integration 构建变体</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">编译和链接的 ad-rss-lib 库</font><font style="vertical-align: inherit;">引入了</font></font><a href="https://opensource.org/licenses/LGPL-2.1" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LGPL-2.1-only License</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">虚幻引擎 4 遵循其</font></font><a href="https://www.unrealengine.com/en-US/faq" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">自己的许可条款</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CARLA 使用三个依赖项作为 SUMO 集成的一部分：</font></font></p>
+<ul dir="auto">
+<li><a href="https://proj.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PROJ</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，一个通用坐标变换软件，使用</font></font><a href="https://proj.org/about.html#license" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">X/MIT开源许可证</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></li>
+<li><a href="https://www.sqlite.org" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SQLite</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，PROJ 依赖项的一部分，属于</font></font><a href="https://www.sqlite.org/purchase/license" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">公共领域</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></li>
+<li><a href="https://xerces.apache.org/xerces-c/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Xerces-C是一个验证 XML 解析器，可根据</font></font></a><font style="vertical-align: inherit;"></font><a href="http://www.apache.org/licenses/LICENSE-2.0.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apache 软件许可证版本 2.0</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">提供</font><font style="vertical-align: inherit;">。</font></font></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CARLA 使用一个依赖项作为 Chrono 集成的一部分：</font></font></p>
+<ul dir="auto">
+<li><a href="https://eigen.tuxfamily.org/index.php?title=Main_Page" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Eigen</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，一个使用</font></font><a href="https://www.mozilla.org/en-US/MPL/2.0/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MPL2 许可证</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">的线性代数 C++ 模板库。</font></font></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CARLA 使用 Autodesk FBX SDK 在地图导入过程中将 FBX 转换为 OBJ。</font><font style="vertical-align: inherit;">此步骤是可选的，SDK 位于</font></font><a href="https://www.autodesk.com/developer-network/platform-technologies/fbx-sdk-2020-0" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">此处</font></font></a></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">该软件包含由 Autodesk, Inc. 开发的 Autodesk® FBX® 代码。版权所有 2020 Autodesk, Inc. 保留所有权利。</font><font style="vertical-align: inherit;">此类代码按“原样”提供，Autodesk, Inc. 不承担任何及所有明示或暗示的保证，包括但不限于对适销性、特定用途的适用性或不侵犯第三方权利的暗示保证。</font><font style="vertical-align: inherit;">在任何情况下，Autodesk, Inc. 均不对任何直接、间接、附带、特殊、惩戒性或后果性损害（包括但不限于采购替代商品或服务；使用损失、数据损失或利润损失；或业务中断）无论是何种原因引起的，并且基于任何责任理论，无论是合同责任、严格责任还是以任何方式由此类代码产生的侵权行为（包括疏忽或其他）。”</font></font></p>
+</article></div>
